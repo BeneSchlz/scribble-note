@@ -1,9 +1,21 @@
-from tkinter import *
+import tkinter as tk
 
-root = Tk()
-root.title("Frame Example")
-root.config(bg="blue")
-left_frame = Frame(root, width=800, height=400, bg="white", relief="solid", bd=2)
-left_frame.grid(row=0, column=0, padx=10, pady=5)
-left_frame.grid_propagate(False)
-root.mainloop()
+if __name__ == "__main__":
+    root = tk.Tk()
+    root.title("scribble")
+    root.geometry("500x200")
+
+    button = tk.Button(
+        root,
+        text = "Save"
+    )
+    button.pack()
+
+
+    title_field = tk.Entry(root, width=50)
+    title_field.pack(padx=10, pady=5)   
+
+    text_field = tk.Text(root, wrap="word", width=50, height=10)
+    text_field.pack(padx=10, pady=10)
+
+    root.mainloop()
