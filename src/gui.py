@@ -20,18 +20,29 @@ def save_to_file():
         print(f"Error saving file: {e}")
 
     root.destroy()
+
+def cancel_workflow():
+    root.destroy() 
     
 if __name__ == "__main__":
     root = tk.Tk()
     root.title("scribble")
     root.geometry("700x400")
 
-    button = tk.Button(
+    save_button = tk.Button(
         root,
         text = "Save",
         command=save_to_file
     )
-    button.place(x=600, y=350)
+    save_button.place(x=600, y=350)
+
+    cancel_button = tk.Button(
+        root,
+        text = "Cancel",
+        command=cancel_workflow
+    )
+    cancel_button.place(x=525, y=350)
+
 
 
     title_field = tk.Entry(root, width=500)
