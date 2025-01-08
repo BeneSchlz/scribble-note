@@ -1,4 +1,5 @@
 import tkinter as tk
+import os
 
 def save_to_file():
     title = title_field.get()
@@ -17,6 +18,8 @@ def save_to_file():
         print(f"Note saved to {filename}")
     except Exception as e:
         print(f"Error saving file: {e}")
+
+    root.destroy()
     
 if __name__ == "__main__":
     root = tk.Tk()
