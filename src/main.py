@@ -1,5 +1,7 @@
 import customtkinter as ctk
 
+__version__ = "1.0"
+
 def delete_line(event):
     """Delete the entire line where the cursor is located."""
     widget = event.widget
