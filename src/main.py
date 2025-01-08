@@ -2,6 +2,9 @@ import customtkinter as ctk
 
 __version__ = "1.0"
 
+def on_closing():
+    app.iconify()
+
 def delete_line(event):
     """Delete the entire line where the cursor is located."""
     widget = event.widget
@@ -65,6 +68,8 @@ if __name__ == "__main__":
     app = ctk.CTk()
     app.title("Scribble")
     app.geometry("700x400")
+
+    app.protocol("WM_DELETE_WINDOW", on_closing)
 
     title_field = ctk.CTkEntry(app, placeholder_text="Enter your title here", width=650)
     title_field.pack(padx=10, pady=5)
